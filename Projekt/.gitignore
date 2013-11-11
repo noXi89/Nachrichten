@@ -1,0 +1,5 @@
+# generated files
+db/
+incremental_db/
+*.bak
+*.lock

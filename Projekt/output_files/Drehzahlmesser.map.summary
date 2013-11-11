@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Oct 03 13:57:06 2013
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : Drehzahlmesser
+Top-level Entity Name : drehzahlmessung
+Family : Cyclone IV E
+Total logic elements : 1,081
+    Total combinational functions : 1,081
+    Dedicated logic registers : 50
+Total registers : 50
+Total pins : 20
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
