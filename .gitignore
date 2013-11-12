@@ -1,0 +1,10 @@
+# generated files
+Projekt/db/
+Projekt/incremental_db/
+Projekt/output_files/
+*.bak
+*.lock
+*.vho
+*.sdo
+*.xrf
+*.qws
