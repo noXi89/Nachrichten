@@ -4,3 +4,7 @@ incremental_db/
 output_files/
 *.bak
 *.lock
+*.vho
+*.sdo
+*.xrf
+*.qws
