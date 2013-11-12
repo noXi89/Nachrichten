@@ -54,7 +54,6 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VHDL_FILE Drehzahl_LCD_Anzeige.vhd
 set_global_assignment -name VHDL_FILE Display.vhd
 set_global_assignment -name VHDL_FILE freq_gen.vhd
@@ -64,3 +63,4 @@ set_global_assignment -name VHDL_FILE Drehzahlmessung.vhd
 set_global_assignment -name VHDL_FILE Anzeige_Richtung.vhd
 set_global_assignment -name BDF_FILE Konzept.bdf
 set_global_assignment -name VHDL_FILE Anzeige_Drehzahl.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

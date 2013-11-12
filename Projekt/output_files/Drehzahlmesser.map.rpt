@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Drehzahlmesser
-Thu Oct 03 13:57:06 2013
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Tue Nov 12 21:34:43 2013
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
 ---------------------
@@ -43,8 +43,8 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 03 13:57:06 2013    ;
-; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 21:34:43 2013    ;
+; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; Drehzahlmesser                           ;
 ; Top-level Entity Name              ; drehzahlmessung                          ;
 ; Family                             ; Cyclone IV E                             ;
@@ -158,23 +158,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                     ; Library ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; Drehzahlmessung.vhd              ; yes             ; User VHDL File               ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/Drehzahlmessung.vhd    ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/lpm_divide.tdf                       ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/abs_divider.inc                      ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/sign_div_unsign.inc                  ;         ;
-; aglobal121.inc                   ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/aglobal121.inc                       ;         ;
-; db/lpm_divide_92p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/lpm_divide_92p.tdf  ;         ;
-; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/abs_divider_4dg.tdf ;         ;
-; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/alt_u_div_6af.tdf   ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/add_sub_7pc.tdf     ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/add_sub_8pc.tdf     ;         ;
-; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/lpm_abs_i0a.tdf     ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; Drehzahlmessung.vhd              ; yes             ; User VHDL File               ; E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd                            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; e:/programme/altera/12.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; e:/programme/altera/12.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; e:/programme/altera/12.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal121.inc                   ; yes             ; Megafunction                 ; e:/programme/altera/12.1/quartus/libraries/megafunctions/aglobal121.inc      ;         ;
+; db/lpm_divide_92p.tdf            ; yes             ; Auto-Generated Megafunction  ; E:/GitHub/Nachrichten/Projekt/db/lpm_divide_92p.tdf                          ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; E:/GitHub/Nachrichten/Projekt/db/abs_divider_4dg.tdf                         ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; E:/GitHub/Nachrichten/Projekt/db/alt_u_div_6af.tdf                           ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/GitHub/Nachrichten/Projekt/db/add_sub_7pc.tdf                             ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/GitHub/Nachrichten/Projekt/db/add_sub_8pc.tdf                             ;         ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; E:/GitHub/Nachrichten/Projekt/db/lpm_abs_i0a.tdf                             ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -275,7 +275,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -283,11 +283,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Thu Oct 03 13:56:58 2013
+    Info: Processing started: Tue Nov 12 21:34:35 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Drehzahlmesser -c Drehzahlmesser
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file drehzahl_lcd_anzeige.vhd
+    Info (12022): Found design unit 1: Drehzahl_LCD_Anzeige-rtl
+    Info (12023): Found entity 1: Drehzahl_LCD_Anzeige
+Info (12021): Found 2 design units, including 1 entities, in source file display.vhd
+    Info (12022): Found design unit 1: display-Structural
+    Info (12023): Found entity 1: display
+Info (12021): Found 2 design units, including 1 entities, in source file freq_gen.vhd
+    Info (12022): Found design unit 1: freq_gen-rtl
+    Info (12023): Found entity 1: freq_gen
+Info (12021): Found 2 design units, including 1 entities, in source file entprell.vhd
+    Info (12022): Found design unit 1: entprell-rtl
+    Info (12023): Found entity 1: entprell
 Info (12021): Found 2 design units, including 1 entities, in source file richtungserkennung.vhd
     Info (12022): Found design unit 1: richtungserkennung-rtl
     Info (12023): Found entity 1: richtungserkennung
@@ -297,6 +309,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file drehzah
 Info (12021): Found 2 design units, including 1 entities, in source file anzeige_richtung.vhd
     Info (12022): Found design unit 1: anzeige_richtung-rtl
     Info (12023): Found entity 1: anzeige_richtung
+Info (12021): Found 1 design units, including 1 entities, in source file konzept.bdf
+    Info (12023): Found entity 1: Konzept
+Info (12021): Found 2 design units, including 1 entities, in source file anzeige_drehzahl.vhd
+    Info (12022): Found design unit 1: anzeige_drehzahl-rtl
+    Info (12023): Found entity 1: anzeige_drehzahl
 Info (12127): Elaborating entity "Drehzahlmessung" for the top level hierarchy
 Info (278001): Inferred 1 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
@@ -328,10 +345,10 @@ Info (21057): Implemented 1101 device resources after synthesis - the final reso
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 17 output pins
     Info (21061): Implemented 1081 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 531 megabytes
-    Info: Processing ended: Thu Oct 03 13:57:06 2013
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Tue Nov 12 21:34:43 2013
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Total CPU time (on all processors): 00:00:06
 
 
