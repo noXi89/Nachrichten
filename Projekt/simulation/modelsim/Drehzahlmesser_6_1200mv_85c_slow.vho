@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 32-bit"
 -- VERSION "Version 12.1 Build 177 11/07/2012 SJ Web Edition"
 
--- DATE "11/12/2013 22:15:51"
+-- DATE "11/12/2013 22:15:50"
 
 -- 
 -- Device: Altera EP4CE6E22C6 Package TQFP144

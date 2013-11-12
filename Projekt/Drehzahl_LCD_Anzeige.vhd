@@ -6,6 +6,7 @@ use ieee.std_logic_arith.all;
 entity Drehzahl_LCD_Anzeige is
 	port
 	(
+		clock			: in std_logic := '0';
 		reset			: in std_logic := '1';
 		error			: in std_logic := '1';
 		charposition: in integer range 0 to 159;
@@ -20,7 +21,7 @@ end entity;
 architecture rtl of Drehzahl_LCD_Anzeige is
 	signal current_drehzahl: std_logic_vector(15 downto 0) := "0000000000000000";
 	begin
-		process(charposition, drehzahl)
+		process(clock, reset, error, charposition, drehzahl, richtung)
 			variable counter: integer := 0;
 			variable int_val: integer := 0;
 			
@@ -48,7 +49,7 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 					when 4 => ascii_out <= x"45"; -- E
 					when 5 => ascii_out <= x"54"; -- T
 				end case;
-			else
+			elsif(rising_edge(clock)) then
 				if(error = '1') then
 					-- Bei Fehler -> Ersetze Drehzahl- und Richtungsausgabe durch Sternchen
 					if(charposition >= 1 AND charposition <= 5) then
