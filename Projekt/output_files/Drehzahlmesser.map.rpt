@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Drehzahlmesser
-Thu Oct 03 13:57:06 2013
-Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Tue Nov 12 21:59:25 2013
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,14 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +40,27 @@ applicable agreement for further details.
 
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                           ;
-+-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Oct 03 13:57:06 2013    ;
-; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
-; Revision Name               ; Drehzahlmesser                           ;
-; Top-level Entity Name       ; Drehzahlmessung                          ;
-; Family                      ; Cyclone V                                ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                ;
-; Total registers             ; N/A until Partition Merge                ;
-; Total pins                  ; N/A until Partition Merge                ;
-; Total virtual pins          ; N/A until Partition Merge                ;
-; Total block memory bits     ; N/A until Partition Merge                ;
-; Total PLLs                  ; N/A until Partition Merge                ;
-; Total DLLs                  ; N/A until Partition Merge                ;
-+-----------------------------+------------------------------------------+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++---------------------------------+------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Nov 12 21:59:25 2013    ;
+; Quartus II 64-Bit Version       ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Revision Name                   ; Drehzahlmesser                           ;
+; Top-level Entity Name           ; drehzahlmessung                          ;
+; Family                          ; Cyclone V                                ;
+; Logic utilization (in ALMs)     ; N/A                                      ;
+; Total registers                 ; 50                                       ;
+; Total pins                      ; 20                                       ;
+; Total virtual pins              ; 0                                        ;
+; Total block memory bits         ; 0                                        ;
+; Total DSP Blocks                ; 0                                        ;
+; Total HSSI RX PCSs              ; 0                                        ;
+; Total HSSI PMA RX Deserializers ; 0                                        ;
+; Total HSSI TX PCSs              ; 0                                        ;
+; Total HSSI PMA TX Serializers   ; 0                                        ;
+; Total PLLs                      ; 0                                        ;
+; Total DLLs                      ; 0                                        ;
++---------------------------------+------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,32 +160,133 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; Drehzahlmessung.vhd              ; yes             ; User VHDL File               ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/Drehzahlmessung.vhd    ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/lpm_divide.tdf                       ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/abs_divider.inc                      ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/sign_div_unsign.inc                  ;         ;
-; aglobal121.inc                   ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/aglobal121.inc                       ;         ;
-; db/lpm_divide_92p.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/lpm_divide_92p.tdf  ;         ;
-; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/abs_divider_4dg.tdf ;         ;
-; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/alt_u_div_6af.tdf   ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/add_sub_7pc.tdf     ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/add_sub_8pc.tdf     ;         ;
-; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/db/lpm_abs_i0a.tdf     ;         ;
-+----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; Drehzahlmessung.vhd              ; yes             ; User VHDL File               ; C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd                       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal121.inc                   ; yes             ; Megafunction                 ; c:/users/alex/coding/altera/quartus/libraries/megafunctions/aglobal121.inc      ;         ;
+; db/lpm_divide_rqo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/git/Nachrichten/Projekt/db/lpm_divide_rqo.tdf                     ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/git/Nachrichten/Projekt/db/abs_divider_4dg.tdf                    ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/git/Nachrichten/Projekt/db/alt_u_div_6af.tdf                      ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/git/Nachrichten/Projekt/db/add_sub_7pc.tdf                        ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/git/Nachrichten/Projekt/db/add_sub_8pc.tdf                        ;         ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Alex/git/Nachrichten/Projekt/db/lpm_abs_i0a.tdf                        ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 596   ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 1184  ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 7     ;
+;     -- 5 input functions                    ; 473   ;
+;     -- 4 input functions                    ; 385   ;
+;     -- <=3 input functions                  ; 319   ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 50    ;
+;                                             ;       ;
+; I/O pins                                    ; 20    ;
+; Total DSP Blocks                            ; 0     ;
+; Maximum fan-out                             ; 62    ;
+; Total fan-out                               ; 5398  ;
+; Average fan-out                             ; 4.24  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
++---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; |drehzahlmessung                      ; 1184 (72)         ; 50 (50)      ; 0                 ; 0          ; 20   ; 0            ; |drehzahlmessung                                                                                              ;              ;
+;    |lpm_divide:Div0|                  ; 1112 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |drehzahlmessung|lpm_divide:Div0                                                                              ;              ;
+;       |lpm_divide_rqo:auto_generated| ; 1112 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |drehzahlmessung|lpm_divide:Div0|lpm_divide_rqo:auto_generated                                                ;              ;
+;          |abs_divider_4dg:divider|    ; 1112 (16)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |drehzahlmessung|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider                        ;              ;
+;             |alt_u_div_6af:divider|   ; 1066 (1066)       ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |drehzahlmessung|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider  ;              ;
+;             |lpm_abs_i0a:my_abs_den|  ; 30 (30)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |drehzahlmessung|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_den ;              ;
++---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 50    ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 48    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; error~reg0                             ; 2       ;
+; last_sig1                              ; 3       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_rqo ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------+
-; Top            ; 00:00:04     ;
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:11     ;
++----------------+--------------+
+
+
++-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Thu Oct 03 13:56:58 2013
+    Info: Processing started: Tue Nov 12 21:59:07 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Drehzahlmesser -c Drehzahlmesser
 Info (20034): Auto device selection is not supported for Cyclone V device family. The default device, 5CGXFC7C7F23C8, is set.
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 0 design units, including 0 entities, in source file pid_controller/rtl/pid_defines.v
 Info (12021): Found 1 design units, including 1 entities, in source file pid_controller/rtl/pid.v
     Info (12023): Found entity 1: PID
 Info (12021): Found 4 design units, including 4 entities, in source file pid_controller/rtl/cla_fixed.v
@@ -185,12 +298,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file pid_con
     Info (12023): Found entity 1: booth_radix4
 Info (12021): Found 6 design units, including 6 entities, in source file pid_controller/rtl/16x16bit_multiplier_pipelined.v
     Info (12023): Found entity 1: booth_array
+    Info (12023): Found entity 2: partial_product_gen
+    Info (12023): Found entity 3: half_adder
     Info (12023): Found entity 4: full_adder
     Info (12023): Found entity 5: compressor42
     Info (12023): Found entity 6: multiplier_16x16bit_pipelined
-Error (10500): VHDL syntax error at Drehzahl_LCD_Anzeige.vhd(20) near text "signal";  expecting "begin", or a declaration statement File: C:/Users/Alex/git/Nachrichten/Projekt/Drehzahl_LCD_Anzeige.vhd Line: 20
-Error (10500): VHDL syntax error at Drehzahl_LCD_Anzeige.vhd(28) near text ")";  expecting "(", or an identifier, or  unary operator File: C:/Users/Alex/git/Nachrichten/Projekt/Drehzahl_LCD_Anzeige.vhd Line: 28
-Info (12021): Found 0 design units, including 0 entities, in source file drehzahl_lcd_anzeige.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file drehzahl_lcd_anzeige.vhd
+    Info (12022): Found design unit 1: Drehzahl_LCD_Anzeige-rtl
+    Info (12023): Found entity 1: Drehzahl_LCD_Anzeige
 Info (12021): Found 2 design units, including 1 entities, in source file display.vhd
     Info (12022): Found design unit 1: display-Structural
     Info (12023): Found entity 1: display
@@ -214,18 +329,44 @@ Info (12021): Found 1 design units, including 1 entities, in source file konzept
 Info (12021): Found 2 design units, including 1 entities, in source file anzeige_drehzahl.vhd
     Info (12022): Found design unit 1: anzeige_drehzahl-rtl
     Info (12023): Found entity 1: anzeige_drehzahl
-Info (12021): Found 1 design units, including 1 entities, in source file konzept.bdf
-    Info (12023): Found entity 1: Konzept
-Info (12021): Found 2 design units, including 1 entities, in source file anzeige_drehzahl.vhd
-    Info (12022): Found design unit 1: anzeige_drehzahl-rtl
-    Info (12023): Found entity 1: anzeige_drehzahl
 Info (12021): Found 2 design units, including 1 entities, in source file pid_controller/pid.vhd
-    Info (12022): Found design unit 1: Spartan-Verhalten
-    Info (12023): Found entity 1: Spartan
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 531 megabytes
-    Info: Processing ended: Thu Oct 03 13:57:06 2013
-    Error: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:08
+    Info (12022): Found design unit 1: PID_Wrapper-Verhalten
+    Info (12023): Found entity 1: PID_Wrapper
+Info (12127): Elaborating entity "Drehzahlmessung" for the top level hierarchy
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0"
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rqo.tdf
+    Info (12023): Found entity 1: lpm_divide_rqo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
+    Info (12023): Found entity 1: alt_u_div_6af
+Warning (12136): Clear box output file C:/Users/Alex/git/Nachrichten/Projekt/db/add_sub_7pc.tdf is not compatible with the current compile. Used regenerated output file C:/Users/Alex/git/Nachrichten/Projekt/db/add_sub_7pc.tdf for elaboration
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc
+Warning (12136): Clear box output file C:/Users/Alex/git/Nachrichten/Projekt/db/add_sub_8pc.tdf is not compatible with the current compile. Used regenerated output file C:/Users/Alex/git/Nachrichten/Projekt/db/add_sub_8pc.tdf for elaboration
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
+    Info (12023): Found entity 1: lpm_abs_i0a
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1204 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 1184 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 572 megabytes
+    Info: Processing ended: Tue Nov 12 21:59:25 2013
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:13
 
 
