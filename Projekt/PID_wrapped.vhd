@@ -15,9 +15,9 @@ generic(
 port(
 	i_clk        : in  std_logic;
 	i_rst        : in  std_logic;
-	i_data_soll  : in  std_logic_vector(data_width-1 downto 0);
-	i_data_ist   : in  std_logic_vector(data_width-1 downto 0);
-	o_data_y     : out std_logic_vector(data_width-1 downto 0)
+	i_data_soll  : in  std_logic_vector(data_width-1 downto 0) := (others => '0');
+	i_data_ist   : in  std_logic_vector(data_width-1 downto 0) := (others => '0');
+	o_data_y     : out std_logic_vector(data_width-1 downto 0) := (others => '0')
   );
 end entity PID_Regler_wrapped;
 
@@ -45,24 +45,18 @@ architecture Behavioral of PID_Regler_wrapped is
 	signal w      :  std_logic_vector(data_width-1 downto 0);
 	signal x      :  std_logic_vector(data_width-1 downto 0);
 	signal e      :  std_logic_vector(data_width-1 downto 0);
-   signal s_kp   :  std_logic_vector(intern_data_width-1 downto 0) := c_kp;
-   signal s_ki   :  std_logic_vector(intern_data_width-1 downto 0) := c_ki;
-   signal s_kd   :  std_logic_vector(intern_data_width-1 downto 0) := c_kd;
 
 begin
+-- just map ... nothing more ... no process ... 
+-- simple as that ... you are just a wrapper
 PID_Regler_instance: PID_Regler port map(
 	   i_clk,
       i_rst,
-      s_kp,
-      s_ki,
-      s_kd,
+      c_kp, -- constant from line 25 -- this comment will maybe become obsolete.
+      c_ki, -- constant from line 26 -- this comment will maybe become obsolete.
+      c_kd, -- constant from line 27 -- this comment will maybe become obsolete.
       i_data_soll,
       i_data_ist,
       o_data_y
 	);
-
---	Regler: process(i_clk)
---		begin
---		
---	end process Regler;
 end architecture Behavioral;

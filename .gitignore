@@ -8,6 +8,7 @@ Projekt/output_files/
 *.sdo
 *.xrf
 *.qws
+*.rpt
 Projekt/simulation/modelsim/*.*
 Projekt/simulation/modelsim/*/
 !Projekt/simulation/modelsim/*.do

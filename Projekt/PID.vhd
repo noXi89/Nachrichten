@@ -40,7 +40,7 @@ architecture Behavioral of PID_Regler is
 	
 	
 begin
-	Regler: process(i_clk)
+	Regler: process(i_clk, i_data_soll, i_data_ist, i_kp, i_ki, i_kd)
 	variable v_i_kp         : integer := 0;
 	variable v_i_ki         : integer := 0;
 	variable v_i_kd         : integer := 0;
