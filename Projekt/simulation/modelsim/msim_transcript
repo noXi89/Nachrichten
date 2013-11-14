@@ -10,6 +10,7 @@
 # ** Warning: Copied E:\Programme\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
+<<<<<<< HEAD
 # vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/freq_gen.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 # -- Loading package STANDARD
@@ -29,6 +30,9 @@
 # -- Compiling entity richtungserkennung
 # -- Compiling architecture rtl of richtungserkennung
 # vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd}
+=======
+# vcom -93 -work work {C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd}
+>>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
 # Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -57,13 +61,29 @@
 # -- Compiling entity anzeige_drehzahl
 # -- Compiling architecture rtl of anzeige_drehzahl
 # 
+<<<<<<< HEAD
 vsim -voptargs=+acc work.richtungserkennung
 # vsim -voptargs=+acc work.richtungserkennung 
+=======
+wave create -pattern none -portmode in -language vhdl /drehzahlmessung/clock
+# drehzahlmessung
+wave create -pattern none -portmode in -language vhdl /drehzahlmessung/reset
+# drehzahlmessung
+wave create -pattern none -portmode in -language vhdl /drehzahlmessung/sig1
+# drehzahlmessung
+wave create -pattern none -portmode out -language vhdl /drehzahlmessung/error
+# drehzahlmessung
+wave create -pattern none -portmode out -language vhdl -range 15 0 /drehzahlmessung/drehzahl
+# drehzahlmessung
+vsim work.drehzahlmessung
+# vsim work.drehzahlmessung 
+>>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.std_logic_arith(body)
+<<<<<<< HEAD
 # Loading work.richtungserkennung(rtl)
 wave create -pattern none -portmode in -language vhdl /richtungserkennung/clock
 # richtungserkennung
@@ -77,3 +97,7 @@ wave create -pattern none -portmode out -language vhdl /richtungserkennung/error
 # richtungserkennung
 wave create -pattern none -portmode out -language vhdl /richtungserkennung/richtung
 # richtungserkennung
+=======
+# Loading ieee.math_real(body)
+# Loading work.drehzahlmessung(rtl)
+>>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8

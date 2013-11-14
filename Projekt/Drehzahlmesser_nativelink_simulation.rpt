@@ -18,6 +18,11 @@ Sim dir               :  simulation\modelsim
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
+<<<<<<< HEAD
 Sourced NativeLink script e:/programme/altera/12.1/quartus/common/tcl/internal/nativelink/modelsim.tcl
 Warning: File Drehzahlmesser_run_msim_rtl_vhdl.do already exists - backing up current file as Drehzahlmesser_run_msim_rtl_vhdl.do.bak11
+=======
+Sourced NativeLink script c:/users/alex/coding/altera/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File Drehzahlmesser_run_msim_rtl_vhdl.do already exists - backing up current file as Drehzahlmesser_run_msim_rtl_vhdl.do.bak5
+>>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
 Info: Spawning ModelSim-Altera Simulation software 

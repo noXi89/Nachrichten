@@ -2,6 +2,7 @@ m255
 K3
 13
 cModel Technology
+<<<<<<< HEAD
 Z0 dE:\GitHub\Nachrichten\Projekt\simulation\modelsim
 Eanzeige_drehzahl
 Z1 w1381858146
@@ -91,6 +92,19 @@ R5
 R6
 Z23 8E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd
 Z24 FE:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd
+=======
+Z0 dC:\Users\Alex\git\Nachrichten\Projekt\simulation\modelsim
+Edrehzahlmessung
+Z1 w1380797812
+Z2 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\Alex\git\Nachrichten\Projekt\simulation\modelsim
+Z8 8C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd
+Z9 FC:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd
+>>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
 l0
 L7
 Vm_Ilz]_::Jh[>fc4D<W`o0
@@ -103,6 +117,14 @@ R13
 R14
 !s100 VN]37Io4_[]Ini0alQ^Z@0
 !i10b 1
+<<<<<<< HEAD
+=======
+Z11 !s108 1384444678.400000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd|
+Z13 !s107 C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+>>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
 Artl
 R22
 R2
