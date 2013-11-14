@@ -1,6 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use ieee.std_logic_arith.conv_std_logic_vector;
 
 entity display is
 	port
@@ -13,7 +14,7 @@ entity display is
 		lcdRW			: out		std_logic;
 		lcdE1			: out		std_logic; --buffer
 		lcdE2			: out		std_logic := '0'; --buffer
-		charposition: out		integer range 0 to 159 --buffer
+		charposition: out		std_logic_vector(7 downto 0) --integer range 0 to 159 --buffer
 	);
 end entity;
 
@@ -153,7 +154,7 @@ architecture Structural of display is
 								--lcde1 <= '1';
 								--lcde2 <= '0';
 							end if;
-						elsif (charRAMPointer = charRAMPointer'high) then
+						elsif (charRAMPointer = CHAR_RAM_TYPE'high) then -- change CHAR_RAM_TYPE back to charRAMPointer
 							charRAMPointer <= 0;
 						else
 							charRAMPointer <= charRAMPointer + 1;
@@ -180,7 +181,7 @@ architecture Structural of display is
 					end case;
 				end if;
 				
-				charposition <= charRAMPointer;
+				charposition <= conv_std_logic_vector(charRAMPointer,8);
 			end if;
 		end process;
 	end architecture;

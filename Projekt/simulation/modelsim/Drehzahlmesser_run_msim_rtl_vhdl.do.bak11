@@ -5,7 +5,5 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Drehzahl_LCD_Anzeige.vhd}
-vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Display.vhd}
-vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/freq_gen.vhd}
+vcom -93 -work work {C:/Users/Alex/git/Nachrichten/Projekt/Display.vhd}
 

@@ -2,39 +2,38 @@ m255
 K3
 13
 cModel Technology
-<<<<<<< HEAD
-Z0 dE:\GitHub\Nachrichten\Projekt\simulation\modelsim
-Eanzeige_drehzahl
-Z1 w1381858146
+Z0 dC:\Users\Alex\git\Nachrichten\Projekt\simulation\modelsim
+Edisplay
+Z1 w1384458253
 Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z6 dE:\GitHub\Nachrichten\Projekt\simulation\modelsim
-Z7 8E:/GitHub/Nachrichten/Projekt/Anzeige_Drehzahl.vhd
-Z8 FE:/GitHub/Nachrichten/Projekt/Anzeige_Drehzahl.vhd
+Z6 dC:\Users\Alex\git\Nachrichten\Projekt\simulation\modelsim
+Z7 8C:/Users/Alex/git/Nachrichten/Projekt/Display.vhd
+Z8 FC:/Users/Alex/git/Nachrichten/Projekt/Display.vhd
 l0
 L6
-V954LS2=oYZ6TSCDNk9haZ1
-!s100 CALM6Bzli1SXRcFGoIWEY1
+VB;Gnh3;2CfE_4fFdZH8NB2
+!s100 2IaNle;1znRRCclVUL6Io3
 Z9 OV;C;10.1b;51
 31
 !i10b 1
-Z10 !s108 1384455677.809000
-Z11 !s90 -reportprogress|300|-93|-work|work|E:/GitHub/Nachrichten/Projekt/Anzeige_Drehzahl.vhd|
-Z12 !s107 E:/GitHub/Nachrichten/Projekt/Anzeige_Drehzahl.vhd|
+Z10 !s108 1384458300.920000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alex/git/Nachrichten/Projekt/Display.vhd|
+Z12 !s107 C:/Users/Alex/git/Nachrichten/Projekt/Display.vhd|
 Z13 o-93 -work work -O0
 Z14 tExplicit 1
-Artl
+Astructural
 R2
 R3
 R4
 R5
-DEx4 work 16 anzeige_drehzahl 0 22 954LS2=oYZ6TSCDNk9haZ1
-l49
-L25
-VGcH]MZ?VQMSlnJhai?G3P2
-!s100 b3GoK4j0<oi4DVV?7i24S0
+DEx4 work 7 display 0 22 B;Gnh3;2CfE_4fFdZH8NB2
+l63
+L21
+VRMmZY]8SWlheE3Fhokb_I0
+!s100 M[8IO?;SDVlcGW`9NhF3l1
 R9
 31
 !i10b 1
@@ -43,182 +42,3 @@ R11
 R12
 R13
 R14
-Eanzeige_richtung
-Z15 w1380792509
-R2
-R3
-R4
-R5
-R6
-Z16 8E:/GitHub/Nachrichten/Projekt/Anzeige_Richtung.vhd
-Z17 FE:/GitHub/Nachrichten/Projekt/Anzeige_Richtung.vhd
-l0
-L6
-VWJHT3VMTAP9;TUgBBnNQL2
-R9
-31
-Z18 !s108 1384455677.579000
-Z19 !s90 -reportprogress|300|-93|-work|work|E:/GitHub/Nachrichten/Projekt/Anzeige_Richtung.vhd|
-Z20 !s107 E:/GitHub/Nachrichten/Projekt/Anzeige_Richtung.vhd|
-R13
-R14
-!s100 K`GaNJ8K8l_KzA:Sn`8eJ1
-!i10b 1
-Artl
-R2
-R3
-R4
-R5
-DEx4 work 16 anzeige_richtung 0 22 WJHT3VMTAP9;TUgBBnNQL2
-l45
-L21
-VLgOjH1YU4M^V6EmBoDIlf1
-R9
-31
-R18
-R19
-R20
-R13
-R14
-!s100 ;NoCAHzNSzm1LBdGXAoX30
-!i10b 1
-Edrehzahlmessung
-Z21 w1380797812
-Z22 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
-R2
-R3
-R4
-R5
-R6
-Z23 8E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd
-Z24 FE:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd
-=======
-Z0 dC:\Users\Alex\git\Nachrichten\Projekt\simulation\modelsim
-Edrehzahlmessung
-Z1 w1380797812
-Z2 DPx4 ieee 9 math_real 0 22 :iME`dTX54_U49lJNF5JI3
-Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-Z4 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z7 dC:\Users\Alex\git\Nachrichten\Projekt\simulation\modelsim
-Z8 8C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd
-Z9 FC:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd
->>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
-l0
-L7
-Vm_Ilz]_::Jh[>fc4D<W`o0
-R9
-31
-Z25 !s108 1384455677.349000
-Z26 !s90 -reportprogress|300|-93|-work|work|E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd|
-Z27 !s107 E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd|
-R13
-R14
-!s100 VN]37Io4_[]Ini0alQ^Z@0
-!i10b 1
-<<<<<<< HEAD
-=======
-Z11 !s108 1384444678.400000
-Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd|
-Z13 !s107 C:/Users/Alex/git/Nachrichten/Projekt/Drehzahlmessung.vhd|
-Z14 o-93 -work work -O0
-Z15 tExplicit 1
->>>>>>> e0b18bf2b845c06c6b38b9e39ab6ca3d9b70c9b8
-Artl
-R22
-R2
-R3
-R4
-R5
-DEx4 work 15 drehzahlmessung 0 22 m_Ilz]_::Jh[>fc4D<W`o0
-l26
-L20
-V5fMo@3ndgKoQjlWW3VIAR2
-R9
-31
-R25
-R26
-R27
-R13
-R14
-!s100 lV;HonJ_Zj:c:PDc@JmLA3
-!i10b 1
-Efreq_gen
-Z28 w1371038230
-R2
-R3
-R4
-R5
-R6
-Z29 8E:/GitHub/Nachrichten/Projekt/freq_gen.vhd
-Z30 FE:/GitHub/Nachrichten/Projekt/freq_gen.vhd
-l0
-L6
-V4;cJ63@`1kQ:[KIf;6;6Q0
-R9
-31
-Z31 !s108 1384455676.799000
-Z32 !s90 -reportprogress|300|-93|-work|work|E:/GitHub/Nachrichten/Projekt/freq_gen.vhd|
-Z33 !s107 E:/GitHub/Nachrichten/Projekt/freq_gen.vhd|
-R13
-R14
-!s100 a7Z=KI7oA8LQQDidBBGF^0
-!i10b 1
-Artl
-R2
-R3
-R4
-R5
-DEx4 work 8 freq_gen 0 22 4;cJ63@`1kQ:[KIf;6;6Q0
-l22
-L15
-V2nb<Cl2M[z=g?Aaz277C_2
-R9
-31
-R31
-R32
-R33
-R13
-R14
-!s100 CGYWbODXUL^Vkj[SF040L0
-!i10b 1
-Erichtungserkennung
-Z34 w1380742820
-R2
-R3
-R4
-R5
-R6
-Z35 8E:/GitHub/Nachrichten/Projekt/Richtungserkennung.vhd
-Z36 FE:/GitHub/Nachrichten/Projekt/Richtungserkennung.vhd
-l0
-L6
-V5NYVHiKbVez>OoWo9zGUY3
-R9
-31
-Z37 !s108 1384455677.059000
-Z38 !s90 -reportprogress|300|-93|-work|work|E:/GitHub/Nachrichten/Projekt/Richtungserkennung.vhd|
-Z39 !s107 E:/GitHub/Nachrichten/Projekt/Richtungserkennung.vhd|
-R13
-R14
-!s100 @Y7U`=R3V9dTa@hZi4=;F1
-!i10b 1
-Artl
-R2
-R3
-R4
-R5
-DEx4 work 18 richtungserkennung 0 22 5NYVHiKbVez>OoWo9zGUY3
-l22
-L20
-VzgFk9:mO]:f3[W1@n01N?2
-R9
-31
-R37
-R38
-R39
-R13
-R14
-!s100 ]c9iI=<gh9m1iS5kZZ4`Q1
-!i10b 1
