@@ -1,16 +1,34 @@
-# Reading C:/Users/Alex/coding/altera/12.1sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# Reading E:/Programme/altera/modelsim_ase/tcl/vsim/pref.tcl 
 # do Drehzahlmesser_run_msim_rtl_vhdl.do 
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
 # }
 # vlib rtl_work
 # vmap work rtl_work
-# Copying C:\Users\Alex\coding\altera\12.1sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Copying E:\Programme\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
-# ** Warning: Copied C:\Users\Alex\coding\altera\12.1sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+# ** Warning: Copied E:\Programme\altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/Drehzahlmessung.vhd}
+# vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/freq_gen.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Compiling entity freq_gen
+# -- Compiling architecture rtl of freq_gen
+# vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Richtungserkennung.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Compiling entity richtungserkennung
+# -- Compiling architecture rtl of richtungserkennung
+# vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Drehzahlmessung.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -20,44 +38,42 @@
 # -- Loading package MATH_REAL
 # -- Compiling entity drehzahlmessung
 # -- Compiling architecture rtl of drehzahlmessung
+# vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Anzeige_Richtung.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Compiling entity anzeige_richtung
+# -- Compiling architecture rtl of anzeige_richtung
+# vcom -93 -work work {E:/GitHub/Nachrichten/Projekt/Anzeige_Drehzahl.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Compiling entity anzeige_drehzahl
+# -- Compiling architecture rtl of anzeige_drehzahl
 # 
-vsim work.drehzahlmessung
-# vsim work.drehzahlmessung 
+vsim -voptargs=+acc work.richtungserkennung
+# vsim -voptargs=+acc work.richtungserkennung 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.std_logic_arith(body)
-# Loading ieee.math_real(body)
-# Loading work.drehzahlmessung(rtl)
-do {C:/Users/Alex/Dropbox/Studium/MIKS12/3. Semester/EISS2/Mario_Alex/Projekt/simulation/modelsim/drehzahlmessung.do}
-# .main_pane.wave.interior.cs.body.pw.wf
-# 1
-add wave -position end  sim:/drehzahlmessung/error
-add wave -position end  sim:/drehzahlmessung/drehzahl
-run -all
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 190ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/drehzahlmessung/sig1
-restart
-run -all
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 5ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/drehzahlmessung/clock
-restart
-run -all
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 160ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/drehzahlmessung/sig1
-restart
-run -all
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 163ps -dutycycle 50 -starttime 0ps -endtime 1000ps Edit:/drehzahlmessung/sig1
-restart
-run -all
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 20us -dutycycle 50 -starttime 0ms -endtime 1000ms Edit:/drehzahlmessung/clock
-wave modify -driver freeze -pattern constant -value 1 -starttime 0ms -endtime 1000ms Edit:/drehzahlmessung/reset
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 10ms -dutycycle 50 -starttime 0ms -endtime 1000ms Edit:/drehzahlmessung/sig1
-restart
-run
-run
-run
-run
-run
-run -all
-wave modify -driver freeze -pattern clock -initialvalue 0 -period 9ms -dutycycle 50 -starttime 0ms -endtime 1000ms Edit:/drehzahlmessung/sig1
-restart
-run -all
+# Loading work.richtungserkennung(rtl)
+wave create -pattern none -portmode in -language vhdl /richtungserkennung/clock
+# richtungserkennung
+wave create -pattern none -portmode in -language vhdl /richtungserkennung/reset
+# richtungserkennung
+wave create -pattern none -portmode in -language vhdl /richtungserkennung/sig1
+# richtungserkennung
+wave create -pattern none -portmode in -language vhdl /richtungserkennung/sig2
+# richtungserkennung
+wave create -pattern none -portmode out -language vhdl /richtungserkennung/error
+# richtungserkennung
+wave create -pattern none -portmode out -language vhdl /richtungserkennung/richtung
+# richtungserkennung

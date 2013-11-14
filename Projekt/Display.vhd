@@ -11,9 +11,9 @@ entity display is
 		lcdData		: out		std_logic_vector(7 downto 0);
 		lcdRS			: out		std_logic;
 		lcdRW			: out		std_logic;
-		lcdE1			: buffer	std_logic;
-		lcdE2			: buffer	std_logic;
-		charposition: buffer integer range 0 to 159
+		lcdE1			: out		std_logic; --buffer
+		lcdE2			: out		std_logic := '0'; --buffer
+		charposition: out		integer range 0 to 159 --buffer
 	);
 end entity;
 
