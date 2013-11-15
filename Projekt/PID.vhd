@@ -13,14 +13,14 @@ generic(
 	constant intern_data_width: integer  := 18
 );
 port(
-	i_clk        : in  std_logic;
-	i_rst        : in  std_logic;
-	i_kp         : in  std_logic_vector(intern_data_width-1 downto 0);
-	i_ki         : in  std_logic_vector(intern_data_width-1 downto 0);
-	i_kd         : in  std_logic_vector(intern_data_width-1 downto 0);
-	i_data_soll  : in  std_logic_vector(data_width-1 downto 0);
-	i_data_ist   : in  std_logic_vector(data_width-1 downto 0);
-	o_data_y     : out std_logic_vector(data_width-1 downto 0)
+	i_clk        : in  std_logic := '0';
+	i_rst        : in  std_logic := '0';
+	i_kp         : in  std_logic_vector(intern_data_width-1 downto 0) := x"00";
+	i_ki         : in  std_logic_vector(intern_data_width-1 downto 0) := x"00";
+	i_kd         : in  std_logic_vector(intern_data_width-1 downto 0) := x"00";
+	i_data_soll  : in  std_logic_vector(data_width-1 downto 0) := x"00";
+	i_data_ist   : in  std_logic_vector(data_width-1 downto 0) := x"00";
+	o_data_y     : out std_logic_vector(data_width-1 downto 0) := x"00"
   );
 end entity PID_Regler;
 
@@ -40,7 +40,7 @@ architecture Behavioral of PID_Regler is
 	
 	
 begin
-	Regler: process(i_clk, i_data_soll, i_data_ist, i_kp, i_ki, i_kd)
+	Regler: process(i_clk, i_rst, i_data_soll, i_data_ist, i_kp, i_ki, i_kd)
 	variable v_i_kp         : integer := 0;
 	variable v_i_ki         : integer := 0;
 	variable v_i_kd         : integer := 0;

@@ -13,8 +13,8 @@ generic(
 	constant intern_data_width: integer  := 18
 );
 port(
-	i_clk        : in  std_logic;
-	i_rst        : in  std_logic;
+	i_clk        : in  std_logic := '0';
+	i_rst        : in  std_logic := '0';
 	i_data_soll  : in  std_logic_vector(data_width-1 downto 0) := (others => '0');
 	i_data_ist   : in  std_logic_vector(data_width-1 downto 0) := (others => '0');
 	o_data_y     : out std_logic_vector(data_width-1 downto 0) := (others => '0')
