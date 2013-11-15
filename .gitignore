@@ -13,3 +13,5 @@ Projekt/simulation/modelsim/*.*
 Projekt/simulation/modelsim/*/
 !Projekt/simulation/modelsim/*.do
 !Projekt/simulation/modelsim/*.do.*
+Projekt/simulation/modelsim/Drehzahlmesser_run_msim_rtl_vhdl.*
+Projekt/simulation/modelsim/msim_transcript
