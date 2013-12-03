@@ -1,6 +1,6 @@
 TODO
 =======
-7seg Richtungsanzeige Richtung umkehren
+[check] 7seg Richtungsanzeige Richtung umkehren
 7seg Drehzahl Ausgabe
 Eingabe Solldrehzahl (18 Knöppe)
 error bei motorstop bzw. timer überlauf
