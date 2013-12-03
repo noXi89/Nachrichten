@@ -1,56 +1,61 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_arith.all;
+--use ieee.std_logic_arith.all;
 
-entity anzeige_drehzahl is
+entity anzeige_drehzahl_splitter is
 	port
 	(
 		clock			: in std_logic := '0';
 		reset			: in std_logic := '1';
-		
-		error			: in std_logic := '1';
+
 		drehzahl		: in std_logic_vector (15 downto 0) := "0000000000000000"; -- Range 0 - 65535 
 		
-		seg1			: out std_logic_vector(7 downto 0) := "00000000";
-		seg2			: out std_logic_vector(7 downto 0) := "00000000";
-		seg3			: out std_logic_vector(7 downto 0) := "00000000";
-		seg4			: out std_logic_vector(7 downto 0) := "00000000";
-		seg5			: out std_logic_vector(7 downto 0) := "00000000";
-		seg6			: out std_logic_vector(7 downto 0) := "00000000"
+		seg1			: out std_logic_vector(3 downto 0) := "0000";
+		seg2			: out std_logic_vector(3 downto 0) := "0000";
+		seg3			: out std_logic_vector(3 downto 0) := "0000";
+		seg4			: out std_logic_vector(3 downto 0) := "0000";
+		seg5			: out std_logic_vector(3 downto 0) := "0000";
+		seg6			: out std_logic_vector(3 downto 0) := "0000"
 		
 	);
 end entity;
 
-architecture rtl of anzeige_drehzahl is
-	type map_type is array (0 to 7) of std_logic_vector(7 downto 0);									
-	constant map_seg1: map_type := (
-												0 => (0 => '1', others => '0'),
-												1 => (others => '0'),
-												2 => (others => '0'),
-												3 => (others => '0'),
-												4 => (others => '0'),
-												5 => (3 => '1', others => '0'),
-												6 => (4 => '1', others => '0'),
-												7 => (5 => '1', others => '0')
-											);
-
-	constant map_seg2: map_type := (
-												0 => (others => '0'),
-												1 => (0 => '1', others => '0'),
-												2 => (1 => '1', others => '0'),
-												3 => (2 => '1', others => '0'),
-												4 => (3 => '1', others => '0'),
-												5 => (others => '0'),
-												6 => (others => '0'),
-												7 => (others => '0')
-											);
+architecture rtl of anzeige_drehzahl_splitter is
 	constant ani_delta: integer := 1; -- aendern zu -1, wenn Richtung falsch
 	begin
-		process(clock, reset, error)
-			variable ani_counter: integer := 0;
+		process(clock, reset)
+			variable drehzahl_i: integer := 0;
+			variable digit: integer := 0;
 		begin
-	
+			if(reset = '0') then
+				drehzahl_i := 0;
+			elsif(rising_edge(clock)) then
+				drehzahl_i := to_integer(unsigned(drehzahl));
+				
+				digit := drehzahl_i mod 10;
+				seg1 <= std_logic_vector(to_unsigned(digit, 16));
+				drehzahl_i := drehzahl_i / 10;
+
+				digit := drehzahl_i mod 10;
+				seg2 <= std_logic_vector(to_unsigned(digit, 16));
+				drehzahl_i := drehzahl_i / 10;
+				
+				digit := drehzahl_i mod 10;
+				seg3 <= std_logic_vector(to_unsigned(digit, 16));
+				drehzahl_i := drehzahl_i / 10;
+				
+				digit := drehzahl_i mod 10;
+				seg4 <= std_logic_vector(to_unsigned(digit, 16));
+				drehzahl_i := drehzahl_i / 10;
+				
+				digit := drehzahl_i mod 10;
+				seg5 <= std_logic_vector(to_unsigned(digit, 16));
+				drehzahl_i := drehzahl_i / 10;
+				
+				digit := drehzahl_i mod 10;
+				seg6 <= std_logic_vector(to_unsigned(digit, 16));
+			end if;
 		end process;
 
   end rtl;
