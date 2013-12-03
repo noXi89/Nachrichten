@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
-use ieee.std_logic_arith.all;
+--use ieee.std_logic_arith.all;
 
 entity Drehzahl_LCD_Anzeige is
 	port
@@ -22,33 +22,42 @@ end entity;
 architecture rtl of Drehzahl_LCD_Anzeige is
 	signal current_drehzahl: std_logic_vector(15 downto 0) := "0000000000000000";
 	
-	signal value_position_1: integer range 0 to 9 := 0;
-	signal value_position_10: integer range 0 to 9 := 0;
-	signal value_position_100: integer range 0 to 9 := 0;
-	signal value_position_1000: integer range 0 to 9 := 0;
-	signal value_position_10000: integer range 0 to 9 := 0;
+	signal value_position_1: std_logic_vector(3 downto 0) := "0000";
+	signal value_position_10: std_logic_vector(3 downto 0) := "0000";
+	signal value_position_100: std_logic_vector(3 downto 0) := "0000";
+	signal value_position_1000: std_logic_vector(3 downto 0) := "0000";
+	signal value_position_10000: std_logic_vector(3 downto 0) := "0000";
 	
 	begin
-		process(clock, drehzahl)
+		process(clock, reset, drehzahl)
 			variable int_val: integer := 0;
+			variable temp_val: integer := 0;
 			variable counter: integer := 0;
 		begin
 			if(reset = '0') then
 				current_drehzahl <= "0000000000000000";
 			elsif(rising_edge(clock)) then
 				if(drehzahl /= current_drehzahl) then
-					int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+					int_val := to_integer(unsigned(drehzahl));
 					current_drehzahl <= drehzahl;
 					
-					value_position_1 <= int_val mod 10;
+					temp_val := int_val mod 10;
+					value_position_1 <= std_logic_vector(to_unsigned(temp_val, 4));
+					
 					int_val := int_val / 10;
-					value_position_10 <= int_val mod 10;
+					temp_val := int_val mod 10;
+					value_position_10 <= std_logic_vector(to_unsigned(temp_val, 4));
+					
 					int_val := int_val / 10;
-					value_position_100 <= int_val mod 10;
+					temp_val := int_val mod 10;
+					value_position_100 <= std_logic_vector(to_unsigned(temp_val, 4));
+					
 					int_val := int_val / 10;
-					value_position_1000 <= int_val mod 10;
+					temp_val := int_val mod 10;
+					value_position_1000 <= std_logic_vector(to_unsigned(temp_val, 4));
+					
 					int_val := int_val / 10;
-					value_position_10000 <= int_val;
+					value_position_10000 <= std_logic_vector(to_unsigned(int_val, 4));
 				end if;
 			end if;
 		end process;
@@ -90,35 +99,35 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 					-- Ausgabe der einzelnen ermittelten Ziffern
 					case charposition is
 						when x"01" =>
-							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							int_val := to_integer(unsigned(drehzahl));
 							if(int_val < 10000) then
 								ascii_out <= x"20";
 							else
-								ascii_out <= conv_std_logic_vector(48 + value_position_10000, 8); -- ASCII-Null + Ziffer
+								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_10000)); -- ASCII-Null + Ziffer
 							end if;
 						when x"02" =>
-							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							int_val := to_integer(unsigned(drehzahl));
 							if(int_val < 1000) then
 								ascii_out <= x"20";
 							else
-								ascii_out <= conv_std_logic_vector(48 + value_position_1000, 8); -- ASCII-Null + Ziffer
+								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_1000)); -- ASCII-Null + Ziffer
 							end if;
 						when x"03" =>
-							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							int_val := to_integer(unsigned(drehzahl));
 							if(int_val < 100) then
 								ascii_out <= x"20";
 							else
-								ascii_out <= conv_std_logic_vector(48 + value_position_100, 8); -- ASCII-Null + Ziffer
+								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_100)); -- ASCII-Null + Ziffer
 							end if;
 						when x"04" =>
-							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							int_val := to_integer(unsigned(drehzahl));
 							if(int_val < 10) then
 								ascii_out <= x"20";
 							else
-								ascii_out <= conv_std_logic_vector(48 + value_position_10, 8); -- ASCII-Null + Ziffer
+								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_10)); -- ASCII-Null + Ziffer
 							end if;
 						when x"05" =>
-							ascii_out <= conv_std_logic_vector(48 + value_position_1, 8); -- ASCII-Null + Ziffer
+							ascii_out <= std_logic_vector("00110000" + unsigned(value_position_1)); -- ASCII-Null + Ziffer
 						when others =>
 							null;
 					end case;
