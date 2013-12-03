@@ -1,0 +1,14 @@
+TODO
+=======
+7seg Richtungsanzeige Richtung umkehren
+7seg Drehzahl Ausgabe
+Eingabe Solldrehzahl (18 Knöppe)
+error bei motorstop bzw. timer überlauf
+PWM-Ausgang (0-100%, 0%=-3V3, 50% = 0V, )
+
+LCD-Anzeige Anzeige über Range
+-Abfrage auf 0 falsch (" ")
+-Falsche Zeichen "?" "=" ":" ";" " "
+Takt für LCD-Anzeige 40x Schneller als Eingang
+
+

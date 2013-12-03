@@ -8,7 +8,8 @@ entity freq_gen is
 	(
 		clk50mhz		: in std_logic;
 		reset			: in std_logic;
-		clk20Hz			: out std_logic
+		clk20Hz		: out std_logic;
+		clk1MHz		: out std_logic --/50
 	);
 end entity;
 
@@ -16,17 +17,22 @@ architecture rtl of freq_gen is
 		-- für Simulation: 10, für Board: 50000000
 		constant FPGA_freq: integer := 50000000; --range
 		constant FPGA_dest_freq: integer := 20;
+		constant FPGA_dest_freq_1mhz: integer := 1000000;
 		
 		signal count1: integer := 0; -- Sekundentakt
+		signal count2: integer := 0; -- Sekundentakt
 		
 	begin
 		process(clk50mhz, reset)
 		begin
-			if (reset = '1') then
-				clk20Hz <= '0';
-				count1 <= 0;
-			else
+--			if (reset = '0') then
+--				clk20Hz <= '0';
+--				clk1MHz <= '0';
+--				count1 <= 0;
+--				count2 <= 0;
+--			else
 				if(rising_edge(clk50mhz)) then
+						-- clock 1
 						if(count1 < FPGA_freq/FPGA_dest_freq/2) then
 							clk20Hz <= '0';
 							count1 <= count1+1;
@@ -36,8 +42,19 @@ architecture rtl of freq_gen is
 						else
 							count1 <= 0;
 						end if;
+						
+						-- clock 2
+						if(count2 < 25) then
+							clk1MHz <= '0';
+							count2 <= count2+1;
+						elsif(count1 < ((50) - 1)) then
+							clk1MHz <= '1';
+							count2 <= count2+1;
+						else
+							count2 <= 0;
+						end if;
 				end if;
-			end if;
+--			end if;
 		end process;
 	end rtl;
 			

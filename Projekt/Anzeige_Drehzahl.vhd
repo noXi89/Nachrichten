@@ -48,7 +48,7 @@ architecture rtl of anzeige_drehzahl is
 	constant ani_delta: integer := 1; -- aendern zu -1, wenn Richtung falsch
 	begin
 		process(clock, reset, error)
-		variable ani_counter: integer := 0;
+			variable ani_counter: integer := 0;
 		begin
 	
 		end process;

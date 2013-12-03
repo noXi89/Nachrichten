@@ -20,7 +20,7 @@ end entity;
 
 architecture rtl of anzeige_richtung is
 	type map_type is array (0 to 7) of std_logic_vector(7 downto 0);									
-	constant map_seg1: map_type := (
+	constant map_seg2: map_type := (
 												0 => (0 => '1', others => '0'),
 												1 => (others => '0'),
 												2 => (others => '0'),
@@ -31,7 +31,7 @@ architecture rtl of anzeige_richtung is
 												7 => (5 => '1', others => '0')
 											);
 
-	constant map_seg2: map_type := (
+	constant map_seg1: map_type := (
 												0 => (others => '0'),
 												1 => (0 => '1', others => '0'),
 												2 => (1 => '1', others => '0'),
@@ -63,8 +63,8 @@ architecture rtl of anzeige_richtung is
 					ani_counter := ani_counter mod 8;
 					
 					-- Ausgabe
-					seg1 <= map_seg1(ani_counter);
-					seg2 <= map_seg2(ani_counter);
+					seg1 <= NOT map_seg1(7 - ani_counter);
+					seg2 <= NOT map_seg2(7 - ani_counter);
 					
 				end if;
 			end if;
