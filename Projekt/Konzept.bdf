@@ -91,7 +91,7 @@ applicable agreement for further details.
 	(input)
 	(rect 32 296 200 312)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "BLON_I" (rect 5 0 44 12)(font "Arial" ))
+	(text "BLON_I" (rect 5 0 43 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -622,70 +622,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 744 352 968 496)
-	(text "Drehzahl_LCD_Anzeige" (rect 5 0 119 12)(font "Arial" ))
-	(text "inst1" (rect 8 128 31 140)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock" (rect 0 0 25 12)(font "Arial" ))
-		(text "clock" (rect 21 27 46 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 21 43 45 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "error" (rect 0 0 22 12)(font "Arial" ))
-		(text "error" (rect 21 59 43 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "charposition[7..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "charposition[7..0]" (rect 21 75 105 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "drehzahl[15..0]" (rect 0 0 71 12)(font "Arial" ))
-		(text "drehzahl[15..0]" (rect 21 91 92 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "richtung" (rect 0 0 38 12)(font "Arial" ))
-		(text "richtung" (rect 21 107 59 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 224 32)
-		(output)
-		(text "ascii_out[7..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "ascii_out[7..0]" (rect 145 27 214 39)(font "Arial" ))
-		(line (pt 224 32)(pt 208 32)(line_width 3))
-	)
-	(port
-		(pt 224 48)
-		(output)
-		(text "write_enable" (rect 0 0 60 12)(font "Arial" ))
-		(text "write_enable" (rect 153 43 213 55)(font "Arial" ))
-		(line (pt 224 48)(pt 208 48))
-	)
-	(drawing
-		(rectangle (rect 16 16 208 128))
-	)
-)
-(symbol
 	(rect 1008 528 1208 672)
 	(text "display" (rect 5 0 40 12)(font "Arial" ))
 	(text "inst4" (rect 8 128 31 140)(font "Arial" ))
@@ -778,27 +714,94 @@ applicable agreement for further details.
 		(pt 168 32)
 		(output)
 		(text "clk20Hz" (rect 0 0 38 12)(font "Arial" ))
-		(text "clk20Hz" (rect 115 27 147 39)(font "Arial" ))
+		(text "clk20Hz" (rect 115 27 153 39)(font "Arial" ))
 		(line (pt 168 32)(pt 152 32))
 	)
 	(port
 		(pt 168 48)
 		(output)
 		(text "clk1MHz" (rect 0 0 41 12)(font "Arial" ))
-		(text "clk1MHz" (rect 113 43 147 55)(font "Arial" ))
+		(text "clk1MHz" (rect 113 43 154 55)(font "Arial" ))
 		(line (pt 168 48)(pt 152 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 152 64))
 	)
 )
+(symbol
+	(rect 744 352 968 528)
+	(text "Drehzahl_LCD_Anzeige" (rect 5 0 119 12)(font "Arial" ))
+	(text "inst1" (rect 8 160 31 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 25 12)(font "Arial" ))
+		(text "clock" (rect 21 27 46 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "error_drehzahl" (rect 0 0 68 12)(font "Arial" ))
+		(text "error_drehzahl" (rect 21 59 89 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "error_richtung" (rect 0 0 67 12)(font "Arial" ))
+		(text "error_richtung" (rect 21 75 88 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "charposition[7..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "charposition[7..0]" (rect 21 91 105 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "drehzahl[15..0]" (rect 0 0 71 12)(font "Arial" ))
+		(text "drehzahl[15..0]" (rect 21 107 92 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "richtung" (rect 0 0 38 12)(font "Arial" ))
+		(text "richtung" (rect 21 123 59 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "ascii_out[7..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "ascii_out[7..0]" (rect 145 27 203 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(port
+		(pt 224 48)
+		(output)
+		(text "write_enable" (rect 0 0 60 12)(font "Arial" ))
+		(text "write_enable" (rect 153 43 203 55)(font "Arial" ))
+		(line (pt 224 48)(pt 208 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 160))
+	)
+)
 (connector
 	(pt 704 272)
 	(pt 696 272)
-)
-(connector
-	(pt 712 288)
-	(pt 696 288)
 )
 (connector
 	(pt 296 160)
@@ -982,11 +985,6 @@ applicable agreement for further details.
 	(pt 1008 560)
 )
 (connector
-	(pt 584 728)
-	(pt 584 432)
-	(bus)
-)
-(connector
 	(pt 1000 400)
 	(pt 968 400)
 )
@@ -1029,11 +1027,6 @@ applicable agreement for further details.
 	(pt 744 400)
 )
 (connector
-	(pt 584 432)
-	(pt 744 432)
-	(bus)
-)
-(connector
 	(pt 744 416)
 	(pt 728 416)
 )
@@ -1050,21 +1043,6 @@ applicable agreement for further details.
 	(pt 760 128)
 )
 (connector
-	(pt 744 448)
-	(pt 712 448)
-	(bus)
-)
-(connector
-	(pt 712 448)
-	(pt 712 312)
-	(bus)
-)
-(connector
-	(pt 712 312)
-	(pt 760 312)
-	(bus)
-)
-(connector
 	(pt 760 144)
 	(pt 760 312)
 	(bus)
@@ -1078,14 +1056,6 @@ applicable agreement for further details.
 	(pt 760 144)
 	(pt 784 144)
 	(bus)
-)
-(connector
-	(pt 744 464)
-	(pt 736 464)
-)
-(connector
-	(pt 736 464)
-	(pt 736 272)
 )
 (connector
 	(pt 320 496)
@@ -1134,18 +1104,6 @@ applicable agreement for further details.
 (connector
 	(pt 776 240)
 	(pt 792 240)
-)
-(connector
-	(pt 704 256)
-	(pt 792 256)
-)
-(connector
-	(pt 712 272)
-	(pt 736 272)
-)
-(connector
-	(pt 736 272)
-	(pt 792 272)
 )
 (connector
 	(pt 960 224)
@@ -1250,6 +1208,67 @@ applicable agreement for further details.
 	(pt 304 128)
 	(pt 304 352)
 )
+(connector
+	(pt 712 272)
+	(pt 792 272)
+)
+(connector
+	(pt 744 432)
+	(pt 736 432)
+)
+(connector
+	(pt 736 432)
+	(pt 736 256)
+)
+(connector
+	(pt 704 256)
+	(pt 736 256)
+)
+(connector
+	(pt 736 256)
+	(pt 792 256)
+)
+(connector
+	(pt 584 728)
+	(pt 584 448)
+	(bus)
+)
+(connector
+	(pt 584 448)
+	(pt 744 448)
+	(bus)
+)
+(connector
+	(pt 744 480)
+	(pt 704 480)
+)
+(connector
+	(pt 704 480)
+	(pt 704 288)
+)
+(connector
+	(pt 712 288)
+	(pt 704 288)
+)
+(connector
+	(pt 704 288)
+	(pt 696 288)
+)
+(connector
+	(pt 760 312)
+	(pt 712 312)
+	(bus)
+)
+(connector
+	(pt 712 312)
+	(pt 712 464)
+	(bus)
+)
+(connector
+	(pt 744 464)
+	(pt 712 464)
+	(bus)
+)
 (junction (pt 496 200))
 (junction (pt 736 216))
 (junction (pt 296 160))
@@ -1261,9 +1280,10 @@ applicable agreement for further details.
 (junction (pt 296 288))
 (junction (pt 728 128))
 (junction (pt 760 144))
-(junction (pt 736 272))
 (junction (pt 280 320))
 (junction (pt 288 200))
 (junction (pt 736 72))
 (junction (pt 496 128))
 (junction (pt 520 128))
+(junction (pt 736 256))
+(junction (pt 704 288))

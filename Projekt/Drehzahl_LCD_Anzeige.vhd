@@ -8,7 +8,8 @@ entity Drehzahl_LCD_Anzeige is
 	(
 		clock			: in std_logic := '0';
 		reset			: in std_logic := '1';
-		error			: in std_logic := '1';
+		error_drehzahl: in std_logic := '1';
+		error_richtung: in std_logic := '1';
 		charposition: in std_logic_vector(7 downto 0) := "00000000";
 		drehzahl		: in std_logic_vector(15 downto 0) := "0000000000000000";
 		richtung		: in std_logic := '0';
@@ -52,7 +53,7 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 			end if;
 		end process;
 	
-		process(clock, reset, error, charposition, drehzahl, richtung)
+		process(clock, reset, error_drehzahl, error_richtung, charposition, drehzahl, richtung)
 			variable int_val: integer := 0;
 		begin
 			if(reset = '0') then
@@ -80,11 +81,9 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 					write_enable <= '0';
 				end if;
 				
-				if(error = '1') then
-					-- Bei Fehler -> Ersetze Drehzahl- und Richtungsausgabe durch Sternchen
+				if(error_drehzahl = '1') then
+					-- Bei Fehler -> Ersetze Drehzahlausgabe durch Sternchen
 					if(charposition >= x"01" AND charposition <= x"05") then
-						ascii_out <= x"2A"; -- *
-					elsif(charposition >= x"28" AND charposition <= x"2D") then
 						ascii_out <= x"2A"; -- *
 					end if;
 				else
@@ -123,7 +122,14 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 						when others =>
 							null;
 					end case;
-					
+				end if;
+				
+				if(error_richtung = '1') then
+					-- Bei Fehler -> Ersetze Richtungsausgabe durch Sternchen
+					if(charposition >= x"28" AND charposition <= x"2D") then
+						ascii_out <= x"2A"; -- *
+					end if;
+				else
 					-- Ausgabe der Richtung
 					if(richtung = '0') then
 						case charposition is
