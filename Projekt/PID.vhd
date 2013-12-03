@@ -15,12 +15,12 @@ generic(
 port(
 	i_clk        : in  std_logic := '0';
 	i_rst        : in  std_logic := '0';
-	i_kp         : in  std_logic_vector(intern_data_width-1 downto 0) := x"00";
-	i_ki         : in  std_logic_vector(intern_data_width-1 downto 0) := x"00";
-	i_kd         : in  std_logic_vector(intern_data_width-1 downto 0) := x"00";
-	i_data_soll  : in  std_logic_vector(data_width-1 downto 0) := x"00";
-	i_data_ist   : in  std_logic_vector(data_width-1 downto 0) := x"00";
-	o_data_y     : out std_logic_vector(data_width-1 downto 0) := x"00"
+	i_kp         : in  std_logic_vector(intern_data_width-1 downto 0) := (others => '0');
+	i_ki         : in  std_logic_vector(intern_data_width-1 downto 0) := (others => '0');
+	i_kd         : in  std_logic_vector(intern_data_width-1 downto 0) := (others => '0');
+	i_data_soll  : in  std_logic_vector(data_width-1 downto 0) := (others => '0');
+	i_data_ist   : in  std_logic_vector(data_width-1 downto 0) := (others => '0');
+	o_data_y     : out std_logic_vector(data_width-1 downto 0) := (others => '0')
   );
 end entity PID_Regler;
 

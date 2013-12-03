@@ -34,27 +34,27 @@ architecture rtl of anzeige_drehzahl_splitter is
 				drehzahl_i := to_integer(unsigned(drehzahl));
 				
 				digit := drehzahl_i mod 10;
-				seg1 <= std_logic_vector(to_unsigned(digit, 16));
+				seg1 <= std_logic_vector(to_unsigned(digit, 4));
 				drehzahl_i := drehzahl_i / 10;
 
 				digit := drehzahl_i mod 10;
-				seg2 <= std_logic_vector(to_unsigned(digit, 16));
+				seg2 <= std_logic_vector(to_unsigned(digit, 4));
 				drehzahl_i := drehzahl_i / 10;
 				
 				digit := drehzahl_i mod 10;
-				seg3 <= std_logic_vector(to_unsigned(digit, 16));
+				seg3 <= std_logic_vector(to_unsigned(digit, 4));
 				drehzahl_i := drehzahl_i / 10;
 				
 				digit := drehzahl_i mod 10;
-				seg4 <= std_logic_vector(to_unsigned(digit, 16));
+				seg4 <= std_logic_vector(to_unsigned(digit, 4));
 				drehzahl_i := drehzahl_i / 10;
 				
 				digit := drehzahl_i mod 10;
-				seg5 <= std_logic_vector(to_unsigned(digit, 16));
+				seg5 <= std_logic_vector(to_unsigned(digit, 4));
 				drehzahl_i := drehzahl_i / 10;
 				
 				digit := drehzahl_i mod 10;
-				seg6 <= std_logic_vector(to_unsigned(digit, 16));
+				seg6 <= std_logic_vector(to_unsigned(digit, 4));
 			end if;
 		end process;
 

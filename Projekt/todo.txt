@@ -3,7 +3,7 @@ TODO
 [done] 7seg Richtungsanzeige Richtung umkehren
 [done] 7seg Drehzahl Ausgabe
 [done] Eingabe Solldrehzahl (18 Knöppe)
-error bei motorstop bzw. timer überlauf
+[done] error bei motorstop bzw. timer überlauf
 [done] PWM-Ausgang (0-100%, 0%=-3V3, 50% = 0V, )
 
 LCD-Anzeige Anzeige über Range
