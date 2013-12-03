@@ -99,28 +99,28 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 					-- Ausgabe der einzelnen ermittelten Ziffern
 					case charposition is
 						when x"01" =>
-							int_val := to_integer(unsigned(drehzahl));
+							int_val := to_integer(unsigned(current_drehzahl));
 							if(int_val < 10000) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_10000)); -- ASCII-Null + Ziffer
 							end if;
 						when x"02" =>
-							int_val := to_integer(unsigned(drehzahl));
+							int_val := to_integer(unsigned(current_drehzahl));
 							if(int_val < 1000) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_1000)); -- ASCII-Null + Ziffer
 							end if;
 						when x"03" =>
-							int_val := to_integer(unsigned(drehzahl));
+							int_val := to_integer(unsigned(current_drehzahl));
 							if(int_val < 100) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= std_logic_vector("00110000" + unsigned(value_position_100)); -- ASCII-Null + Ziffer
 							end if;
 						when x"04" =>
-							int_val := to_integer(unsigned(drehzahl));
+							int_val := to_integer(unsigned(current_drehzahl));
 							if(int_val < 10) then
 								ascii_out <= x"20";
 							else
