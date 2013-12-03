@@ -48,46 +48,12 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 					value_position_1000 <= int_val mod 10;
 					int_val := int_val / 10;
 					value_position_10000 <= int_val;
---					counter := 0;
---					while int_val >= 10000 loop
---						int_val := int_val - 10000;
---						counter := counter + 1;
---						exit when counter >= 9;
---					end loop;
---					value_position_10000 <= counter;
---					
---					counter := 0;
---					while int_val >= 1000 loop
---						int_val := int_val - 1000;
---						counter := counter + 1;
---						exit when counter >= 9;
---					end loop;
---					value_position_1000 <= counter;
---					
---					counter := 0;
---					while int_val >= 100 loop
---						int_val := int_val - 100;
---						counter := counter + 1;
---						exit when counter >= 9;
---					end loop;
---					value_position_100 <= counter;
---					
---					counter := 0;
---					while int_val >= 10 loop
---						int_val := int_val - 10;
---						counter := counter + 1;
---						exit when counter >= 9;
---					end loop;
---					value_position_10 <= counter;
---					
---					if(int_val >= 0) then
---						value_position_1 <= int_val;
---					end if;
 				end if;
 			end if;
 		end process;
 	
 		process(clock, reset, error, charposition, drehzahl, richtung)
+			variable int_val: integer := 0;
 		begin
 			if(reset = '0') then
 				if(charposition >= x"00" AND charposition <= x"9F") then
@@ -125,25 +91,29 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 					-- Ausgabe der einzelnen ermittelten Ziffern
 					case charposition is
 						when x"01" =>
-							if(value_position_10000 = 0) then
+							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							if(int_val < 10000) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= conv_std_logic_vector(48 + value_position_10000, 8); -- ASCII-Null + Ziffer
 							end if;
 						when x"02" =>
-							if(value_position_1000 = 0) then
+							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							if(int_val < 1000) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= conv_std_logic_vector(48 + value_position_1000, 8); -- ASCII-Null + Ziffer
 							end if;
 						when x"03" =>
-							if(value_position_100 = 0) then
+							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							if(int_val < 100) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= conv_std_logic_vector(48 + value_position_100, 8); -- ASCII-Null + Ziffer
 							end if;
 						when x"04" =>
-							if(value_position_10 = 0) then
+							int_val := to_integer(ieee.numeric_std.unsigned(drehzahl));
+							if(int_val < 10) then
 								ascii_out <= x"20";
 							else
 								ascii_out <= conv_std_logic_vector(48 + value_position_10, 8); -- ASCII-Null + Ziffer
