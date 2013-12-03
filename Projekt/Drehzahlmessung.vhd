@@ -24,6 +24,8 @@ architecture rtl of drehzahlmessung is
 	constant CLOCK_TIME_US: ieee.numeric_std.unsigned(7 downto 0) := "00000101"; -- 5; -- 1us per tick, 1MHz
 	-- 0,00000002 Sekunden | 20 ns | 50Mhz
 	-- 0,00002 Sekunden | 20 us | 50 kHz
+	constant ERRORCOUNTER_MAX: integer := 100000;
+	signal errorcounter: integer := 0;
 	begin
 		process(clock, reset, sig1)
 			--variable current_row: integer := 1;
@@ -34,6 +36,7 @@ architecture rtl of drehzahlmessung is
 			--variable us_per_round: integer := 0;
 			variable rpm : ieee.numeric_std.unsigned(31 downto 0) := "00000000000000000000000000000000";
 			--variable rpm: integer := 0;
+			
 		begin
 			if(reset = '0') then
 				last_sig1 := '1';
@@ -62,6 +65,13 @@ architecture rtl of drehzahlmessung is
 					counter := counter + 1;
 				end if;
 				last_sig1 := sig1;
+				
+				--error check
+				errorcounter <= errorcounter + 1;
+				if(errorcounter > ERRORCOUNTER_MAX) then
+					error <= '1';
+				end if;
+				
 			end if;
 		end process;
 	end rtl;
