@@ -53,22 +53,12 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name VHDL_FILE Drehzahl_LCD_Anzeige.vhd
 set_global_assignment -name VHDL_FILE Display.vhd
 set_global_assignment -name VHDL_FILE freq_gen.vhd
-set_global_assignment -name VHDL_FILE entprell.vhd
 set_global_assignment -name VHDL_FILE Richtungserkennung.vhd
 set_global_assignment -name VHDL_FILE Drehzahlmessung.vhd
 set_global_assignment -name VHDL_FILE Anzeige_Richtung.vhd
 set_global_assignment -name BDF_FILE Konzept.bdf
 set_global_assignment -name VHDL_FILE Anzeige_Drehzahl.vhd
-set_global_assignment -name VHDL_FILE PID.vhd
-set_global_assignment -name BDF_FILE Testblock_LCD_Anzeige.bdf
 set_global_assignment -name BDF_FILE Display_bdf.bdf
-set_global_assignment -name BDF_FILE LCD_Anzeige_Block.bdf
-set_global_assignment -name VHDL_FILE PID_wrapped.vhd
-set_global_assignment -name BDF_FILE PID_wrapped_BDF.bdf
-set_global_assignment -name SDC_FILE Drehzahlmesser.sdc
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_Y2 -to CLOCK
 set_location_assignment PIN_AB22 -to SIG1
@@ -165,7 +155,43 @@ set_location_assignment PIN_E22 -to debug_2
 set_location_assignment PIN_N21 -to BLON_I
 set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING OFF
-set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name FITTER_EFFORT "AUTO FIT"
 set_global_assignment -name VHDL_FILE seg7.vhd
 set_global_assignment -name VHDL_FILE pwm_gen.vhd
+set_location_assignment PIN_AE16 -to pwm
+set_location_assignment PIN_AB28 -to soll_drehzahl_switchs[0]
+set_location_assignment PIN_AC28 -to soll_drehzahl_switchs[1]
+set_location_assignment PIN_AC27 -to soll_drehzahl_switchs[2]
+set_location_assignment PIN_AD27 -to soll_drehzahl_switchs[3]
+set_location_assignment PIN_AB27 -to soll_drehzahl_switchs[4]
+set_location_assignment PIN_AC26 -to soll_drehzahl_switchs[5]
+set_location_assignment PIN_AD26 -to soll_drehzahl_switchs[6]
+set_location_assignment PIN_AB26 -to soll_drehzahl_switchs[7]
+set_location_assignment PIN_AC25 -to soll_drehzahl_switchs[8]
+set_location_assignment PIN_AB25 -to soll_drehzahl_switchs[9]
+set_location_assignment PIN_AC24 -to soll_drehzahl_switchs[10]
+set_location_assignment PIN_AB24 -to soll_drehzahl_switchs[11]
+set_location_assignment PIN_AB23 -to soll_drehzahl_switchs[12]
+set_location_assignment PIN_AA24 -to soll_drehzahl_switchs[13]
+set_location_assignment PIN_AA23 -to soll_drehzahl_switchs[14]
+set_location_assignment PIN_AA22 -to soll_drehzahl_switchs[15]
+set_location_assignment PIN_Y23 -to richtung_in
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name FITTER_EARLY_TIMING_ESTIMATE_MODE OPTIMISTIC
+set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT FAST
+set_location_assignment PIN_E24 -to led_soll_richtung
+set_location_assignment PIN_G22 -to error_drehzahl
+set_location_assignment PIN_G21 -to error_richtung
+set_global_assignment -name VHDL_FILE Regler_simple.vhd
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
+set_global_assignment -name TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS OFF
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC OFF
+set_global_assignment -name OPTIMIZE_TIMING OFF
+set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
+set_global_assignment -name FITTER_AUTO_EFFORT_DESIRED_SLACK_MARGIN "10 ns"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
