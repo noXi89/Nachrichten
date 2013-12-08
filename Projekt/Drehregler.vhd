@@ -32,6 +32,8 @@ architecture rtl of Drehregler is
 				soll_drehzahl <= "0000000000000000";
 				last_signal_a <= '0';
 				last_signal_b <= '0';
+				
+				last_drehzahl := 0;
 			elsif(rising_edge(clock)) then
 				current_status := signal_a & signal_b & last_signal_a & last_signal_b;
 				

@@ -716,42 +716,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 312 96 480 176)
-	(text "freq_gen" (rect 5 0 48 12)(font "Arial" ))
-	(text "inst5" (rect 8 64 31 76)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk50mhz" (rect 0 0 46 12)(font "Arial" ))
-		(text "clk50mhz" (rect 21 27 67 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 24 12)(font "Arial" ))
-		(text "reset" (rect 21 43 45 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 168 32)
-		(output)
-		(text "clk20Hz" (rect 0 0 38 12)(font "Arial" ))
-		(text "clk20Hz" (rect 115 27 153 39)(font "Arial" ))
-		(line (pt 168 32)(pt 152 32))
-	)
-	(port
-		(pt 168 48)
-		(output)
-		(text "clk1MHz" (rect 0 0 41 12)(font "Arial" ))
-		(text "clk1MHz" (rect 113 43 154 55)(font "Arial" ))
-		(line (pt 168 48)(pt 152 48))
-	)
-	(drawing
-		(rectangle (rect 16 16 152 64))
-	)
-)
-(symbol
 	(rect 744 352 968 528)
 	(text "Drehzahl_LCD_Anzeige" (rect 5 0 119 12)(font "Arial" ))
 	(text "inst1" (rect 8 160 31 172)(font "Arial" ))
@@ -1164,6 +1128,49 @@ applicable agreement for further details.
 	)
 	(annotation_block (parameter)(rect 736 -208 960 -160))
 )
+(symbol
+	(rect 312 72 480 184)
+	(text "freq_gen" (rect 5 0 48 12)(font "Arial" ))
+	(text "inst5" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk50mhz" (rect 0 0 46 12)(font "Arial" ))
+		(text "clk50mhz" (rect 21 27 67 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 168 32)
+		(output)
+		(text "clk20Hz" (rect 0 0 38 12)(font "Arial" ))
+		(text "clk20Hz" (rect 115 27 147 39)(font "Arial" ))
+		(line (pt 168 32)(pt 152 32))
+	)
+	(port
+		(pt 168 48)
+		(output)
+		(text "clk1MHz" (rect 0 0 41 12)(font "Arial" ))
+		(text "clk1MHz" (rect 113 43 147 55)(font "Arial" ))
+		(line (pt 168 48)(pt 152 48))
+	)
+	(port
+		(pt 168 64)
+		(output)
+		(text "clkLCD" (rect 0 0 36 12)(font "Arial" ))
+		(text "clkLCD" (rect 117 59 147 71)(font "Arial" ))
+		(line (pt 168 64)(pt 152 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 152 96))
+	)
+)
 (connector
 	(pt 704 272)
 	(pt 696 272)
@@ -1230,10 +1237,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 512 560)
-	(pt 1008 560)
-)
-(connector
 	(pt 1000 400)
 	(pt 968 400)
 )
@@ -1250,18 +1253,6 @@ applicable agreement for further details.
 	(pt 984 576)
 	(pt 984 384)
 	(bus)
-)
-(connector
-	(pt 512 352)
-	(pt 512 384)
-)
-(connector
-	(pt 512 384)
-	(pt 512 560)
-)
-(connector
-	(pt 512 384)
-	(pt 744 384)
 )
 (connector
 	(pt 296 400)
@@ -1324,10 +1315,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 496 128)
-	(pt 496 40)
-)
-(connector
 	(pt 504 128)
 	(pt 504 216)
 )
@@ -1338,10 +1325,6 @@ applicable agreement for further details.
 (connector
 	(pt 736 216)
 	(pt 776 216)
-)
-(connector
-	(pt 480 128)
-	(pt 496 128)
 )
 (connector
 	(pt 496 128)
@@ -1612,24 +1595,8 @@ applicable agreement for further details.
 	(pt 496 304)
 )
 (connector
-	(pt 520 80)
-	(pt 520 128)
-)
-(connector
-	(pt 520 128)
-	(pt 520 272)
-)
-(connector
-	(pt 512 352)
-	(pt 272 352)
-)
-(connector
 	(pt 224 128)
 	(pt 272 128)
-)
-(connector
-	(pt 312 144)
-	(pt 248 144)
 )
 (connector
 	(pt 232 160)
@@ -1698,26 +1665,6 @@ applicable agreement for further details.
 (connector
 	(pt 312 200)
 	(pt 496 200)
-)
-(connector
-	(pt 272 128)
-	(pt 272 352)
-)
-(connector
-	(pt 272 80)
-	(pt 272 128)
-)
-(connector
-	(pt 272 128)
-	(pt 312 128)
-)
-(connector
-	(pt 272 80)
-	(pt 520 80)
-)
-(connector
-	(pt 248 144)
-	(pt 248 160)
 )
 (connector
 	(pt 272 -280)
@@ -1974,10 +1921,6 @@ applicable agreement for further details.
 	(pt 248 -112)
 )
 (connector
-	(pt 248 -112)
-	(pt 248 144)
-)
-(connector
 	(pt 736 -128)
 	(pt 744 -128)
 	(bus)
@@ -1991,10 +1934,6 @@ applicable agreement for further details.
 	(pt 744 -104)
 	(pt 744 0)
 	(bus)
-)
-(connector
-	(pt 272 -280)
-	(pt 272 80)
 )
 (connector
 	(pt 384 40)
@@ -2012,12 +1951,86 @@ applicable agreement for further details.
 	(pt 384 -128)
 	(pt 432 -128)
 )
+(connector
+	(pt 272 56)
+	(pt 520 56)
+)
+(connector
+	(pt 520 56)
+	(pt 520 128)
+)
+(connector
+	(pt 520 128)
+	(pt 520 272)
+)
+(connector
+	(pt 272 -280)
+	(pt 272 56)
+)
+(connector
+	(pt 496 104)
+	(pt 480 104)
+)
+(connector
+	(pt 272 104)
+	(pt 312 104)
+)
+(connector
+	(pt 248 120)
+	(pt 312 120)
+)
+(connector
+	(pt 496 40)
+	(pt 496 104)
+)
+(connector
+	(pt 496 104)
+	(pt 496 128)
+)
+(connector
+	(pt 272 56)
+	(pt 272 104)
+)
+(connector
+	(pt 248 -112)
+	(pt 248 120)
+)
+(connector
+	(pt 248 120)
+	(pt 248 160)
+)
+(connector
+	(pt 272 104)
+	(pt 272 128)
+)
+(connector
+	(pt 480 136)
+	(pt 512 136)
+)
+(connector
+	(pt 512 136)
+	(pt 512 384)
+)
+(connector
+	(pt 1008 560)
+	(pt 648 560)
+)
+(connector
+	(pt 648 560)
+	(pt 648 384)
+)
+(connector
+	(pt 512 384)
+	(pt 648 384)
+)
+(connector
+	(pt 648 384)
+	(pt 744 384)
+)
 (junction (pt 496 200))
 (junction (pt 736 216))
 (junction (pt 744 232))
-(junction (pt 512 384))
 (junction (pt 280 320))
-(junction (pt 496 128))
 (junction (pt 520 128))
 (junction (pt 736 256))
 (junction (pt 704 288))
@@ -2028,13 +2041,10 @@ applicable agreement for further details.
 (junction (pt 1080 32))
 (junction (pt 1080 64))
 (junction (pt 752 144))
-(junction (pt 272 128))
 (junction (pt 248 160))
 (junction (pt 528 232))
 (junction (pt 296 232))
 (junction (pt 312 200))
-(junction (pt 272 80))
-(junction (pt 248 144))
 (junction (pt 944 -16))
 (junction (pt 776 256))
 (junction (pt 248 -112))
@@ -2042,3 +2052,8 @@ applicable agreement for further details.
 (junction (pt 736 96))
 (junction (pt 744 -104))
 (junction (pt 496 40))
+(junction (pt 272 56))
+(junction (pt 496 104))
+(junction (pt 272 104))
+(junction (pt 248 120))
+(junction (pt 648 384))
