@@ -22,9 +22,9 @@ port(
 end entity PID_Regler_wrapped;
 
 architecture Behavioral of PID_Regler_wrapped is
-  constant c_kp : std_logic_vector(intern_data_width-1 downto 0) := std_logic_vector(to_unsigned(10, 18));
+  constant c_kp : std_logic_vector(intern_data_width-1 downto 0) := std_logic_vector(to_unsigned(1, 18));
   constant c_ki : std_logic_vector(intern_data_width-1 downto 0) := std_logic_vector(to_unsigned(1, 18));
-  constant c_kd : std_logic_vector(intern_data_width-1 downto 0) := std_logic_vector(to_unsigned(1, 18));
+  constant c_kd : std_logic_vector(intern_data_width-1 downto 0) := std_logic_vector(to_unsigned(0, 18));
   component PID_Regler is
     generic(
       constant data_width: integer := 16;

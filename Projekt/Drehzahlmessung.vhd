@@ -26,6 +26,7 @@ architecture rtl of drehzahlmessung is
 	-- 0,00002 Sekunden | 20 us | 50 kHz
 	constant PULSES_PER_ROUND: integer := 1024;
 	constant ERRORCOUNTER_MAX: integer := 9999999;
+	
 	signal errorcounter: integer := 0;
 	begin
 		process(clock, reset, sig1)
@@ -42,6 +43,7 @@ architecture rtl of drehzahlmessung is
 			if(reset = '0') then
 				last_sig1 := '1';
 				error <= '1';
+				drehzahl	<= "0000000000000000";
 				-- row <= conv_std_logic_vector(0, 4);
 			elsif(rising_edge(clock)) then
 				--error <= '0';
@@ -72,6 +74,7 @@ architecture rtl of drehzahlmessung is
 				--error check
 				if(errorcounter > ERRORCOUNTER_MAX) then
 					error <= '1';
+					drehzahl	<= "0000000000000000";
 				end if;
 				
 			end if;

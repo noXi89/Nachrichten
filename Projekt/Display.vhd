@@ -19,7 +19,7 @@ entity display is
 end entity;
 
 architecture Structural of display is
-	constant tickNum	: integer 	:= 252;	-- muss mindestens Ozilatorfrequenz*10 groesser sein
+	constant tickNum	: integer 	:= 252;	-- muss mindestens Ozilatorfrequenz*10 groesser sein (252)
 	constant LCD_READ	: std_logic := '1';
 	constant LCD_WRITE: std_logic := '0';
 	constant DATA_CODE: std_logic := '1';

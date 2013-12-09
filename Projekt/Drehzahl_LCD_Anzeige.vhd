@@ -27,37 +27,43 @@ architecture rtl of Drehzahl_LCD_Anzeige is
 	signal value_position_100: std_logic_vector(3 downto 0) := "0000";
 	signal value_position_1000: std_logic_vector(3 downto 0) := "0000";
 	signal value_position_10000: std_logic_vector(3 downto 0) := "0000";
+	constant DREHZAHL_UPDATE_UPPER: integer := 1000000;
 	
 	begin
 		process(clock, reset, drehzahl)
 			variable int_val: integer := 0;
 			variable temp_val: integer := 0;
 			variable counter: integer := 0;
+			variable drehzahl_update_counter: integer := 0;
 		begin
 			if(reset = '0') then
 				current_drehzahl <= "0000000000000000";
 			elsif(rising_edge(clock)) then
-				if(drehzahl /= current_drehzahl) then
-					int_val := to_integer(unsigned(drehzahl));
-					current_drehzahl <= drehzahl;
-					
-					temp_val := int_val mod 10;
-					value_position_1 <= std_logic_vector(to_unsigned(temp_val, 4));
-					
-					int_val := int_val / 10;
-					temp_val := int_val mod 10;
-					value_position_10 <= std_logic_vector(to_unsigned(temp_val, 4));
-					
-					int_val := int_val / 10;
-					temp_val := int_val mod 10;
-					value_position_100 <= std_logic_vector(to_unsigned(temp_val, 4));
-					
-					int_val := int_val / 10;
-					temp_val := int_val mod 10;
-					value_position_1000 <= std_logic_vector(to_unsigned(temp_val, 4));
-					
-					int_val := int_val / 10;
-					value_position_10000 <= std_logic_vector(to_unsigned(int_val, 4));
+				drehzahl_update_counter := drehzahl_update_counter + 1;
+				if(drehzahl_update_counter >= DREHZAHL_UPDATE_UPPER) then
+					drehzahl_update_counter := 0;
+					if(drehzahl /= current_drehzahl) then
+						int_val := to_integer(unsigned(drehzahl));
+						current_drehzahl <= drehzahl;
+						
+						temp_val := int_val mod 10;
+						value_position_1 <= std_logic_vector(to_unsigned(temp_val, 4));
+						
+						int_val := int_val / 10;
+						temp_val := int_val mod 10;
+						value_position_10 <= std_logic_vector(to_unsigned(temp_val, 4));
+						
+						int_val := int_val / 10;
+						temp_val := int_val mod 10;
+						value_position_100 <= std_logic_vector(to_unsigned(temp_val, 4));
+						
+						int_val := int_val / 10;
+						temp_val := int_val mod 10;
+						value_position_1000 <= std_logic_vector(to_unsigned(temp_val, 4));
+						
+						int_val := int_val / 10;
+						value_position_10000 <= std_logic_vector(to_unsigned(int_val, 4));
+					end if;
 				end if;
 			end if;
 		end process;

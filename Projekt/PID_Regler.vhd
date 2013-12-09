@@ -61,16 +61,16 @@ begin
 		-- e  <= std_logic_vector(signed(w) - signed(x));  
 
 		if rising_edge(i_clk) then
-		  if i_rst = '1' then
+		  if i_rst = '0' then
 			 yp <= (others => '0');
 			 yi <= (others => '0');
 			 yd <= (others => '0');
 			 ealt <= (others => '0');
 			 y <= (others => '0');
 		  else
-			v_i_kp         := to_integer(signed(i_kp));
-			v_i_ki         := to_integer(signed(i_ki));
-			v_i_kd         := to_integer(signed(i_kd));
+			v_i_kp         := to_integer(unsigned(i_kp));
+			v_i_ki         := to_integer(unsigned(i_ki));
+			v_i_kd         := to_integer(unsigned(i_kd));
 			v_e				:= to_integer(signed(e));
 			v_w				:= to_integer(signed(w));
 			v_x				:= to_integer(signed(x));
@@ -86,8 +86,10 @@ begin
 			 yp <= std_logic_vector(to_signed((v_i_kp * v_e), yp'length));
 			 yi <= std_logic_vector(to_signed((v_yi_alt + (v_i_ki * v_e / magic_constant_1)), yi'length)); --yi_alt=yi
 			 yd <= std_logic_vector(to_signed((v_i_kd * ((v_e - v_ealt) * magic_constant_1)), yd'length)); -- ealt=e
-
-			 y <= std_logic_vector(to_signed((v_yp+v_yi+v_yd), y'length));
+			 v_yp				:= to_integer(signed(yp));
+			 v_yd				:= to_integer(signed(yd));
+			 v_yi				:= to_integer(signed(yi));
+			 y <= std_logic_vector(to_unsigned((v_yp+v_yi+v_yd), y'length));
 			 --y <= resize((yp + yi + yd));
 			 ealt <= std_logic_vector(to_signed(v_e,ealt'length));
 			 yi_alt <= yi;

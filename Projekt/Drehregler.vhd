@@ -17,7 +17,7 @@ end entity;
 
 architecture rtl of Drehregler is
 	constant MIN_SOLL_DREHZAHL: integer := 0;
-	constant MAX_SOLL_DREHZAHL: integer := 65535;
+	constant MAX_SOLL_DREHZAHL: integer := 800;
 	
 	signal last_signal_a: std_logic := '0';
 	signal last_signal_b: std_logic := '0';
