@@ -4,7 +4,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-use ieee.std_logic_arith.conv_std_logic_vector;
+--use ieee.std_logic_arith.conv_std_logic_vector;
 
 
 entity PID_Regler is
@@ -82,14 +82,14 @@ begin
 			
 			 
 			 --e  <= (w-x);
-			 e  <= conv_std_logic_vector((v_w - v_x), e'length); 
-			 yp <= conv_std_logic_vector((v_i_kp * v_e), yp'length);
-			 yi <= conv_std_logic_vector((v_yi_alt + (v_i_ki * v_e / magic_constant_1)), yi'length); --yi_alt=yi
-			 yd <= conv_std_logic_vector((v_i_kd * ((v_e - v_ealt) * magic_constant_1)), yd'length); -- ealt=e
+			 e  <= std_logic_vector(to_signed((v_w - v_x), e'length)); 
+			 yp <= std_logic_vector(to_signed((v_i_kp * v_e), yp'length));
+			 yi <= std_logic_vector(to_signed((v_yi_alt + (v_i_ki * v_e / magic_constant_1)), yi'length)); --yi_alt=yi
+			 yd <= std_logic_vector(to_signed((v_i_kd * ((v_e - v_ealt) * magic_constant_1)), yd'length)); -- ealt=e
 
-			 y <= conv_std_logic_vector(v_yp+v_yi+v_yd, y'length);
+			 y <= std_logic_vector(to_signed((v_yp+v_yi+v_yd), y'length));
 			 --y <= resize((yp + yi + yd));
-			 ealt <= conv_std_logic_vector(v_e,ealt'length);
+			 ealt <= std_logic_vector(to_signed(v_e,ealt'length));
 			 yi_alt <= yi;
 		  end if;
 		end if;

@@ -6,15 +6,15 @@ use ieee.std_logic_arith.conv_std_logic_vector;
 entity display is
 	port
 	(
-		clk			: in		std_logic;
-		dIn			: in		std_logic_vector(7 downto 0);
-		wEn			: in		std_logic;
-		lcdData		: out		std_logic_vector(7 downto 0);
-		lcdRS			: out		std_logic;
-		lcdRW			: out		std_logic;
-		lcdE1			: out		std_logic; --buffer
+		clk			: in		std_logic := '0';
+		dIn			: in		std_logic_vector(7 downto 0) := (others => '0');
+		wEn			: in		std_logic := '0';
+		lcdData		: out		std_logic_vector(7 downto 0) := (others => '0');
+		lcdRS			: out		std_logic := '0';
+		lcdRW			: out		std_logic := '0';
+		lcdE1			: out		std_logic := '0'; --buffer
 		lcdE2			: out		std_logic := '0'; --buffer
-		charposition: out		std_logic_vector(7 downto 0) --integer range 0 to 159 --buffer
+		charposition: out		std_logic_vector(7 downto 0) := (others => '0') --integer range 0 to 159 --buffer
 	);
 end entity;
 
@@ -61,6 +61,7 @@ architecture Structural of display is
 	signal speicher		: std_logic;
 
 	begin
+	lcdRW <= '0';
 	
 	TickGen : process(clk)
 		variable tickCounter : TICK_COUNTER_TYPE;
