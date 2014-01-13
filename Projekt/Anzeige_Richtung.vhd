@@ -45,7 +45,7 @@ architecture rtl of anzeige_richtung is
 	constant ani_delta: integer := 1; -- aendern zu -1, wenn Richtung falsch
 	
 	constant MAX_RPM: integer := 1100;
-	constant MIN_RPM: integer := 100;
+	constant MIN_RPM: integer := 300;
 	
 	begin
 		process(clock, reset, error, richtung)
@@ -55,8 +55,8 @@ architecture rtl of anzeige_richtung is
 
 		begin
 			if(reset = '0') then
-				-- last_sig1 := '1';				
-				-- row <= conv_std_logic_vector(0, 4);
+				seg1 <= "00000000";
+				seg2 <= "00000000";
 			elsif(rising_edge(clock)) then
 				threshold := (MAX_RPM - to_integer(unsigned(drehzahl_ist))) /MIN_RPM;
 				threshold_counter := threshold_counter + 1;

@@ -30,6 +30,12 @@ architecture rtl of anzeige_drehzahl_splitter is
 		begin
 			if(reset = '0') then
 				drehzahl_i := 0;
+				seg1 <= "0000";
+				seg2 <= "0000";
+				seg3 <= "0000";
+				seg4 <= "0000";
+				seg5 <= "0000";
+				seg6 <= "0000";
 			elsif(rising_edge(clock)) then
 				drehzahl_i := to_integer(unsigned(drehzahl));
 				

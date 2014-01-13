@@ -17,13 +17,13 @@ end entity;
 architecture rtl of pwm_gen is
 	constant major_cycle_ticks: integer := 65536; --max drehzahl*2 hier anpassen!
 	-- constant major_cycle_ticks: integer := 10; --DEBUG
-	signal drehzahl_last: std_logic_vector (15 downto 0) := "0000000000000000";
+	signal drehzahl_last: std_logic_vector (15 downto 0) := "1010100000000000";
 	signal richtung_last: std_logic := '0';
 	begin
 		process(clock, reset)
 			variable tick: integer := 0;
 			variable minor_cycle_ticks: integer := 0;
-			variable richtung_intern: std_logic := '0';
+			variable richtung_intern: std_logic := '1';
 			variable drehzahl_intern: std_logic_vector (15 downto 0) := "0000000000000000";
 		begin
 			if(reset = '0') then
